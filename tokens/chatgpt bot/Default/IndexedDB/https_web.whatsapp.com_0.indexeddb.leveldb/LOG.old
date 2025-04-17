@@ -1,0 +1,15 @@
+2025/04/17-20:30:17.494 55f0 Reusing MANIFEST C:\venombot\tokens\chatgpt bot\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/17-20:30:17.494 55f0 Recovering log #477
+2025/04/17-20:30:17.499 55f0 Reusing old log C:\venombot\tokens\chatgpt bot\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000477.log 
+2025/04/17-20:30:18.600 555c Level-0 table #483: started
+2025/04/17-20:30:18.610 555c Level-0 table #483: 199730 bytes OK
+2025/04/17-20:30:18.615 555c Delete type=0 #477
+2025/04/17-20:30:18.615 55f0 Manual compaction at level-0 from '\x00u\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00v\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/17-20:30:19.515 2ef4 Compacting 1@1 + 2@2 files
+2025/04/17-20:30:19.572 2ef4 Generated table #484@1: 69019 keys, 2234307 bytes
+2025/04/17-20:30:19.594 2ef4 Generated table #485@1: 28634 keys, 729024 bytes
+2025/04/17-20:30:19.594 2ef4 Compacted 1@1 + 2@2 files => 2963331 bytes
+2025/04/17-20:30:19.597 2ef4 compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/04/17-20:30:19.598 2ef4 Delete type=2 #479
+2025/04/17-20:30:19.598 2ef4 Delete type=2 #480
+2025/04/17-20:30:19.598 2ef4 Delete type=2 #483

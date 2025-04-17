@@ -1,0 +1,6 @@
+2025/04/17-20:30:17.089 57b0 Reusing MANIFEST C:\venombot\tokens\chatgpt bot\Default\Local Storage\leveldb/MANIFEST-000001
+2025/04/17-20:30:17.095 57b0 Recovering log #40
+2025/04/17-20:30:17.097 57b0 Reusing old log C:\venombot\tokens\chatgpt bot\Default\Local Storage\leveldb/000040.log 
+2025/04/17-20:31:17.104 4374 Level-0 table #43: started
+2025/04/17-20:31:17.110 4374 Level-0 table #43: 13527 bytes OK
+2025/04/17-20:31:17.114 4374 Delete type=0 #40

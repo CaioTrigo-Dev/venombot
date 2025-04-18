@@ -1,23 +1,24 @@
 const venom = require('venom-bot');
 const axios = require('axios');
 const banco = require('./banco');
+require('dotenv').config(); // Carrega as variáveis de ambiente do arquivo .env
 
 // Configurações do Chatwoot
 const chatwootConfig = {
-    baseUrl: 'https://app.chatwoot.com',
-    accountId: '117974',
-    inboxId: 62196,
-    apiToken: 'hE9PdLiRseEkSovrShPxCxMF'
+    baseUrl: process.env.CHATWOOT_BASE_URL,
+    accountId: process.env.CHATWOOT_ACCOUNT_ID,
+    inboxId: process.env.CHATWOOT_INBOX_ID,
+    apiToken: process.env.CHATWOOT_API_TOKEN
 };
 
-const treinamento = `agora você vai atuar como meu atendente de uma loja de mecanica...`; // seu prompt atual
+const treinamento = `agora você vai atuar como meu atendente de uma loja de mecanica...`;
 
 venom
     .create({
-        session: 'chatgpt bot',
+        session: process.env.WHATSAPP_SESSION_NAME,
         multidevice: true,
-        headless: false,
-        useChrome: true,
+        headless: process.env.WHATSAPP_HEADLESS === 'true',
+        useChrome: process.env.WHATSAPP_USE_CHROME === 'true',
     })
     .then((client) => start(client))
     .catch((erro) => {
@@ -30,11 +31,11 @@ async function criarConversa(phoneNumber, name) {
         const response = await axios.post(
             `${chatwootConfig.baseUrl}/api/v1/accounts/${chatwootConfig.accountId}/conversations`,
             {
-                source_id: phoneNumber, // Usando o número de telefone como source_id
+                source_id: phoneNumber,
                 inbox_id: chatwootConfig.inboxId,
                 contact: {
-                    name: name || "Usuário " + phoneNumber.split('@')[0], // Nome do contato ou número
-                    phone_number: phoneNumber.split('@')[0] // Remove a parte @c.us
+                    name: name || "Usuário " + phoneNumber.split('@')[0],
+                    phone_number: phoneNumber.split('@')[0]
                 }
             },
             {
@@ -46,11 +47,10 @@ async function criarConversa(phoneNumber, name) {
         );
 
         console.log("✅ Conversa criada:", response.data);
-        return response.data.id; // Retorna o ID da conversa
+        return response.data.id;
     } catch (erro) {
         console.error('❌ Erro ao criar conversa:', erro.response?.data || erro.message);
         console.error('Status do erro:', erro.response?.status);
-        console.error('Headers da resposta:', erro.response?.headers);
         return null;
     }
 }

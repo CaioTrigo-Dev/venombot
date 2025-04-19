@@ -1,2 +1,3 @@
-2025/04/18-21:16:38.422 5b04 Creating DB /Users/eduardocruz/venombot/tokens/chatgpt_bot/Default/Local Storage/leveldb since it was missing.
-2025/04/18-21:16:38.427 5b04 Reusing MANIFEST /Users/eduardocruz/venombot/tokens/chatgpt_bot/Default/Local Storage/leveldb/MANIFEST-000001
+2025/04/18-21:20:08.400 5b04 Reusing MANIFEST /Users/eduardocruz/venombot/tokens/chatgpt_bot/Default/Local Storage/leveldb/MANIFEST-000001
+2025/04/18-21:20:08.401 5b04 Recovering log #3
+2025/04/18-21:20:08.401 5b04 Reusing old log /Users/eduardocruz/venombot/tokens/chatgpt_bot/Default/Local Storage/leveldb/000003.log 

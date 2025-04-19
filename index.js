@@ -25,10 +25,17 @@ venom
             // --- Modificação Adicionada ---
             // Opções passadas diretamente para o Puppeteer (que controla o navegador)
             puppeteerOptions: {
-                // Argumentos para iniciar o navegador
+                // Define explicitamente qual navegador usar
+                executablePath: '/usr/bin/google-chrome-stable',
+
+                // Argumentos para tentar contornar problemas comuns em servidores
                 args: [
-                    '--no-sandbox', // Desabilita o sandbox do Chrome (necessário em alguns ambientes Linux/Docker)
-                    '--disable-setuid-sandbox' // Outra flag relacionada à desabilitação do sandbox
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-gpu',           // Útil se não há GPU ou drivers corretos
+                    '--disable-dev-shm-usage', // Útil se a partição /dev/shm é pequena
+                    '--no-zygote',           // Ajuda em alguns ambientes restritos
+                    // '--single-process'    // Tente adicionar se suspeitar de falta de memória
                 ]
             }
             // --- Fim da Modificação ---
